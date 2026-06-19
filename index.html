@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Pembelajaran Kepemanduan Wisatawan KKNI Level III</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#f4f7fa',
+                            100: '#e1e8f0',
+                            200: '#cbd5e1',
+                            700: '#1b2e4b',
+                            800: '#112240',
+                            900: '#0a192f',
+                            950: '#020c1b',
+                        },
+                        emeraldGreen: {
+                            50: '#f0fdf4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-gray-800 font-sans flex flex-col min-h-screen relative overflow-x-hidden">
+
+    <!-- Top Notice Banner -->
+    <div class="bg-gradient-to-r from-emeraldGreen-700 via-navy-800 to-navy-900 text-white text-[11px] sm:text-xs font-semibold py-2 px-4 shadow-inner border-b border-emeraldGreen-600/30">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center space-x-2">
+                <span class="bg-emeraldGreen-600 text-white px-2 py-0.5 rounded text-[10px] uppercase tracking-wider font-bold">PNF DIKTI</span>
+                <span><i class="fa-solid fa-graduation-cap mr-1"></i> Kursus & Pelatihan Kepemanduan Wisatawan - Pendidikan Non-Formal</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="hidden sm:inline"><i class="fa-solid fa-certificate mr-1 text-teal-400"></i> Level III KKNI (Setara Lulusan Kursus Kompetensi)</span>
+                <span class="bg-black/20 px-2 py-0.5 rounded font-mono text-[10px]">TA 2026</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="bg-navy-900/95 backdrop-blur-md text-white sticky top-0 z-50 shadow-lg border-b border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- BRANDING LOGO CONTAINER -->
+                <div class="flex items-center space-x-3 group relative cursor-pointer" title="Klik teks untuk mengubah Logo / Nama Brand Header">
+                    <div class="bg-emeraldGreen-600 p-2.5 rounded-xl shadow-md shadow-emeraldGreen-600/20">
+                        <i class="fa-solid fa-briefcase text-white text-xl sm:text-2xl"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center space-x-2">
+                            <span contenteditable="true" id="editable-logo-text" class="font-black text-lg sm:text-xl tracking-wider text-white border-b border-dashed border-transparent hover:border-emeraldGreen-400 focus:border-emeraldGreen-500 focus:outline-none transition-all">MEDIA<span class="text-teal-400">PNF</span></span>
+                            <span class="bg-navy-800 text-[9px] text-emeraldGreen-400 font-bold px-1.5 py-0.5 rounded border border-navy-700 uppercase">UNNES</span>
+                        </div>
+                        <span class="text-[10px] text-gray-400 block tracking-tight -mt-0.5 select-none"><i class="fa-solid fa-pen text-[8px] mr-1 text-emeraldGreen-500/70"></i> Pendidikan Non-Formal & Sertifikasi Kompetensi</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-1 bg-navy-950/50 p-1.5 rounded-xl border border-navy-800">
+                    <button onclick="switchTab('home')" id="nav-home" class="nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition bg-emeraldGreen-600 text-white shadow-sm">Beranda</button>
+                    <button onclick="switchTab('materials')" id="nav-materials" class="nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-300 hover:bg-navy-800 hover:text-white transition">Media</button>
+                    <button onclick="switchTab('assessment')" id="nav-assessment" class="nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-300 hover:bg-navy-800 hover:text-white transition">Uji Kompetensi</button>
+                    <button onclick="switchTab('profile')" id="nav-profile" class="nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-300 hover:bg-navy-800 hover:text-white transition">Pengembang</button>
+                    <button onclick="switchTab('help')" id="nav-help" class="nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-300 hover:bg-navy-800 hover:text-white transition">Bantuan</button>
+                </div>
+
+                <div class="hidden lg:flex items-center text-xs text-gray-300 border-l border-navy-800 pl-4 space-x-2">
+                    <div class="text-right">
+                        <span class="block font-medium text-white">Rika Sulistyawati</span>
+                        <span class="text-[10px] text-emeraldGreen-400 block">Penyusun Media PNF</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+        <!-- TAB CONTENT: HOME -->
+        <section id="section-home" class="tab-content block space-y-10 animate-fade-in">
+            <div class="relative bg-gradient-to-r from-navy-950 via-navy-900 to-navy-800 rounded-3xl p-8 sm:p-12 text-white overflow-hidden shadow-xl border border-navy-800">
+                <div class="absolute right-0 top-0 w-full sm:w-1/2 h-full opacity-25 sm:opacity-40 pointer-events-none mix-blend-luminosity">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali Wisata Indonesia" class="object-cover w-full h-full">
+                </div>
+                <div class="absolute -right-10 -bottom-10 opacity-5 text-[14rem] text-white pointer-events-none">
+                    <i class="fa-solid fa-compass animate-spin-slow"></i>
+                </div>
+                
+                <div class="max-w-2xl space-y-5 relative z-10">
+                    <span class="inline-flex items-center space-x-1.5 bg-emeraldGreen-700 text-white text-[10px] sm:text-xs uppercase tracking-widest font-extrabold px-3 py-1 rounded-full shadow-md border border-emeraldGreen-500/30">
+                        <i class="fa-solid fa-circle-check animate-pulse text-teal-400"></i><span>Standardisasi KKNI Jenjang III Pendidikan Non-Formal</span>
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight text-white drop-shadow-sm">
+                        Kepemanduan Wisatawan <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-emeraldGreen-400 to-teal-300">Komunikasi Dengan Wisatawan</span>
+                    </h1>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed text-justify">
+                        Selamat datang di platform edukasi digital pelatihan dan kursus kepemanduan wisatawan. Media ini dirancang secara terukur merujuk pada standar kompetensi lulusan kursus guna mencetak generasi pramuwisata yang cakap berkomunikasi serta unggul dalam kepemanduan.
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <button onclick="switchTab('materials')" class="bg-emeraldGreen-600 hover:bg-emeraldGreen-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition flex items-center space-x-2 shadow-lg shadow-emeraldGreen-600/30 transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-book-open"></i><span>Buka Media Pembelajaran</span>
+                        </button>
+                        <button onclick="switchTab('assessment')" class="bg-navy-950/60 hover:bg-navy-800 text-gray-200 font-semibold text-sm px-6 py-3.5 rounded-xl transition border border-navy-700 backdrop-blur-sm">
+                            Uji Pemahaman Mandiri
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-gray-100 space-y-4 relative overflow-hidden">
+                        <div class="absolute right-0 top-0 w-24 h-24 opacity-10 pointer-events-none rounded-bl-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?auto=format&fit=crop&w=200&q=80" alt="Candi Borobudur Corner" class="object-cover w-full h-full">
+                        </div>
+                        
+                        <h2 class="text-xl sm:text-2xl font-bold text-navy-900 flex items-center gap-2.5">
+                            <i class="fa-solid fa-earth-southeast-asia text-emeraldGreen-600"></i> Kepemanduan Wisatawan
+                        </h2>
+                        <p class="text-gray-600 leading-relaxed text-sm text-justify">
+                            Indonesia merupakan poros pariwisata dengan kekayaan daya tarik alam yang membentang luas. Dalam rantai tata kelola ekosistem ini, <strong>Pemandu wisata (Tour Guide)</strong> perlu bertindak sebagai ujung tombak profesional pembentuk citra destinasi pariwisata sekaligus kunci kepuasan tertinggi wisatawan.
+                        </p>
+                        
+                        <div class="bg-emeraldGreen-50/50 border-l-4 border-emeraldGreen-600 p-4 rounded-r-xl space-y-1">
+                            <h4 class="font-bold text-navy-900 text-xs sm:text-sm uppercase tracking-wide flex items-center gap-1.5 text-emeraldGreen-800">
+                                <i class="fa-solid fa-bullseye text-emeraldGreen-600"></i> Tujuan Media Pendidikan Non-Formal (Level III KKNI)
+                            </h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Peserta didik ditargetkan mampu menguasai landasan komunikasi, mengklasifikasikan pesan lisan verbal maupun bahasa tubuh non-verbal, memahami fungsi komunikasi dengan wisatawan serta sigap mengaplikasikan teknik vokal pemanduan interaktif langsung di lapangan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-md border border-gray-100 flex flex-col space-y-3">
+                        <div>
+                            <h4 class="font-bold text-navy-900 text-base mb-1">Pesona Destinasi Indonesia</h4>
+                            <p class="text-xs text-gray-500 leading-relaxed">Berikut merupakan pesona dari pariwisata di Indonesia.</p>
+                        </div>
+                        <!-- Responsive Video Embed Wrapper -->
+                        <div class="w-full aspect-video rounded-xl overflow-hidden shadow-sm border border-slate-200">
+                            <iframe class="w-full h-full" src="https://www.youtube.com/embed/Ox5X9Yzuik8?si=Qn7NZMVN_jMz0Z8_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-gray-100">
+                <h3 class="text-lg sm:text-xl font-bold text-navy-900 mb-6 flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-emeraldGreen-600"></i> Pemetaan Materi Pelatihan Kerja Kepemanduan
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-5 bg-gradient-to-b from-navy-50 to-white rounded-xl border border-slate-100 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-navy-900 font-extrabold text-sm flex items-center space-x-2">
+                            <span class="bg-navy-900 text-white w-6 h-6 rounded-lg flex items-center justify-center text-xs shadow-sm">1</span>
+                            <span>Landasan REACH</span>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed text-justify">Penguasaan 5 landasan utama komunikasi: Respect, Empathy, Audible, Clarity, dan Humble guna menciptakan keselarasan interaksi.</p>
+                    </div>
+                    <div class="p-5 bg-gradient-to-b from-navy-50 to-white rounded-xl border border-slate-100 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-navy-900 font-extrabold text-sm flex items-center space-x-2">
+                            <span class="bg-navy-900 text-white w-6 h-6 rounded-lg flex items-center justify-center text-xs shadow-sm">2</span>
+                            <span>Verbal & Non-Verbal</span>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed text-justify">Sinkronisasi pesan verbal lisan yang santun dengan pesan non-verbal tubuh (Kinesik, Proksemik, Artifaktual, Paralinguistik).</p>
+                    </div>
+                    <div class="p-5 bg-gradient-to-b from-navy-50 to-white rounded-xl border border-slate-100 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-navy-900 font-extrabold text-sm flex items-center space-x-2">
+                            <span class="bg-navy-900 text-white w-6 h-6 rounded-lg flex items-center justify-center text-xs shadow-sm">3</span>
+                            <span>Fungsi Komunikasi</span>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed text-justify">Mengimplementasikan fungsi pemberian Informasi valid, Sosialisasi Nilai kearifan lokal, Menjembatani budaya (Bridging), dan media Hiburan.</p>
+                    </div>
+                    <div class="p-5 bg-gradient-to-b from-navy-50 to-white rounded-xl border border-slate-100 space-y-3 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="text-navy-900 font-extrabold text-sm flex items-center space-x-2">
+                            <span class="bg-navy-900 text-white w-6 h-6 rounded-lg flex items-center justify-center text-xs shadow-sm">4</span>
+                            <span>Teknik Komunikasi</span>
+                        </div>
+                        <p class="text-xs text-gray-600 leading-relaxed text-justify">Penguasaan teknik Commentary interaktif berbasis formula PVR (Preview, View, Review) serta manajemen etika bertelepon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT: MATERIALS & DISCUSSION -->
+        <section id="section-materials" class="tab-content hidden space-y-6 animate-fade-in">
+            
+            <!-- SUBJECT TITLE BANNER -->
+            <div class="bg-gradient-to-r from-navy-900 to-navy-800 text-white p-4 sm:p-5 rounded-2xl shadow-md border-l-4 border-emeraldGreen-500 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                <div>
+                    <span class="text-[10px] bg-emeraldGreen-700 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-widest text-teal-300">Kurikulum Kompetensi Kursus</span>
+                    <h2 class="text-base sm:text-lg font-bold tracking-wide mt-1 text-white">Mata Pelajaran: Komunikasi Kepemanduan Wisata (PNF Level III)</h2>
+                </div>
+                <div class="text-xs text-gray-400 font-medium">
+                    <i class="fa-solid fa-bookmark text-emeraldGreen-500 mr-1"></i> Pokok Bahasan Teoretis 
+                </div>
+            </div>
+
+            <!-- Inner Material Navigation Tabs -->
+            <div class="bg-white rounded-xl p-2 shadow-md border border-gray-100 flex flex-wrap gap-1.5">
+                <button onclick="switchMaterialTab('modul-materi')" id="mat-btn-modul-materi" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg bg-navy-900 text-white transition flex items-center space-x-1.5 shadow-sm">
+                    <i class="fa-solid fa-book mr-1 text-emeraldGreen-400"></i><span> Modul Pembelajaran </span>
+                </button>
+                <button onclick="switchMaterialTab('script')" id="mat-btn-script" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-scroll mr-1"></i><span> Naskah Video </span>
+                </button>
+                <button onclick="switchMaterialTab('map')" id="mat-btn-map" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-sitemap mr-1"></i><span> Peta Materi</span>
+                </button>
+                <button onclick="switchMaterialTab('video')" id="mat-btn-video" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-play-circle mr-1"></i><span> Video Pembelajaran</span>
+                </button>
+                <button onclick="switchMaterialTab('infographic')" id="mat-btn-infographic" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-circle-nodes mr-1"></i><span> Infografis</span>
+                </button>
+                <button onclick="switchMaterialTab('pptx')" id="mat-btn-pptx" class="mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-display mr-1"></i><span> Powerpoint (PPT)</span>
+                </button>
+            </div>
+
+            <!-- Material Panels Container -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-32 h-32 opacity-10 pointer-events-none rounded-bl-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=300&q=80" alt="Yogyakarta Culture Corner" class="object-cover w-full h-full">
+                </div>
+
+                <!-- SUB-TAB PANELS: URAIAN MODUL -->
+                <div id="mat-content-modul-materi" class="material-panel block space-y-8">
+                    <div class="border-b pb-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2">
+                        <div>
+                            <h3 class="text-xl font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-folder-open text-emeraldGreen-600"></i> Uraian Materi </h3>
+                        </div>                                                                                                                                                        
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Mari Belajar</span>
+                    </div>
+                    
+                    <!-- Responsive Full Height Embed Frame for Document -->
+                    <div class="w-full h-[600px] bg-slate-100 border border-slate-200 rounded-xl shadow-inner overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1q50xZ-IyCEnBypNpIjkNPvw76-WkpnVM/preview" class="w-full h-full border-none" allow="autoplay"></iframe>
+                    </div>
+
+                    <div contenteditable="true" class="p-4 bg-yellow-50/50 border border-yellow-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 text-xs text-gray-700 leading-relaxed shadow-sm">
+                        <p class="text-xs text-gray-500">Materi esensial yang disusun selaras dengan standar kompetensi lulusan non-formal.</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-3 shadow-inner">
+                            <h4 class="font-extrabold text-navy-900 text-sm sm:text-base flex items-center gap-2 text-emeraldGreen-700">
+                                <i class="fa-solid fa-scale-balanced"></i> A. Landasan Komunikasi Profesional (Hukum REACH)
+                            </h4>
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                Berdasarkan standar bahan ajar kursus, interaksi kepemanduan wajib berlandaskan lima landasan komunikasi interpersonal makro:
+                            </p>
+                            <ul class="text-xs text-gray-700 space-y-1.5 list-disc pl-4 font-medium">
+                                <li><strong>Respect:</strong> Menghargai hak, adat istiadat, kearifan lokal, serta martabat luhur setiap wisatawan.</li>
+                                <li><strong>Empathy:</strong> Tanggap dan peka dalam membaca kondisi fisik maupun psikologis para tamu.</li>
+                                <li><strong>Audible:</strong> Pesan atau ulasan lisan harus terdengar lantang dan jelas oleh seluruh peserta rombongan.</li>
+                                <li><strong>Clarity:</strong> Informasi objek berbasis data ilmiah sahih (fakta akurat), bukan sekadar mitos rekaan fiktif.</li>
+                                <li><strong>Humble:</strong> Sikap rendah hati, penuh keramahan, santun, dan tidak terkesan menggurui audiens.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-3 shadow-inner">
+                            <h4 class="font-extrabold text-navy-900 text-sm sm:text-base flex items-center gap-2 text-emeraldGreen-700">
+                                <i class="fa-solid fa-comments"></i> B. Klasifikasi Komunikasi: Verbal & Non-Verbal
+                            </h4>
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                Pemandu harus mengintegrasikan dua kategori komunikasi secara berimbang demi kelancaran operasional kerja di lapangan:
+                            </p>
+                            <ul class="text-xs text-gray-700 space-y-2 list-none pl-0">
+                                <li class="border-b border-gray-200 pb-1.5">
+                                    <span class="font-bold text-navy-900 text-xs block">1. Komunikasi Verbal:</span>
+                                    Penggunaan bahasa lisan yang efektif, pemilihan kosakata (*diksi*) yang sopan, ramah, bersifat universal, serta penuturan kalimat pendek yang padat agar diserap dengan cepat.
+                                </li>
+                                <li>
+                                    <span class="font-bold text-navy-900 text-xs block">2. Komunikasi Non-Verbal (Bahasa Tubuh):</span>
+                                    Meliputi 4 aspek vital: <strong>Pesan Kinesik</strong> (gerakan mata/mimik wajah), <strong>Pesan Proksemik</strong> (pengaturan jarak berdiri interaksi), <strong>Pesan Artifaktual</strong> (kerapian baju/atribut resmi), dan <strong>Pesan Paralinguistik</strong> (intonasi vokal).
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-3 shadow-inner">
+                            <h4 class="font-extrabold text-navy-900 text-sm sm:text-base flex items-center gap-2 text-emeraldGreen-700">
+                                <i class="fa-solid fa-share-nodes"></i> C. Fungsi Utama Komunikasi Kepemanduan
+                            </h4>
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                Sesuai ketetapan pelatihan non-formal, fungsi penyampaian komunikasi oleh pramuwisata ditujukan untuk menggerakkan empat instrumen strategis:
+                            </p>
+                            <ul class="text-xs text-gray-700 space-y-1.5 list-disc pl-4">
+                                <li><strong>Fungsi Informasi:</strong> Mentransfer data objek wisata, jadwal rute perjalanan, aturan keselamatan, serta kondisi darurat secara akurat.</li>
+                                <li><strong>Fungsi Sosialisasi Nilai:</strong> Mengedukasi wisatawan untuk menghormati nilai luhur, aturan adat lokal, serta kelestarian alam hayati nusantara.</li>
+                                <li><strong>Fungsi Menjembatani (Bridging):</strong> Bertindak sebagai mediator lintas kultural yang menghubungkan pemahaman wisatawan asing dengan warga lokal setempat.</li>
+                                <li><strong>Fungsi Hiburan:</strong> Memberikan kenyamanan melalu penyampaian humor sehat dan cerita interaktif (*storytelling*) agar tur terasa menyenangkan.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 bg-slate-50 border border-slate-100 rounded-2xl space-y-3 shadow-inner">
+                            <h4 class="font-extrabold text-navy-900 text-sm sm:text-base flex items-center gap-2 text-emeraldGreen-700">
+                                <i class="fa-solid fa-bullhorn"></i> D. Teknik Komunikasi Lapangan & Layanan Telepon
+                            </h4>
+                            <p class="text-xs text-gray-600 leading-relaxed text-justify">
+                                Modul menetapkan standarisasi teknik pemanduan interaktif ke dalam 3 instrumen taktis operasional:
+                            </p>
+                            <ul class="text-xs text-gray-700 space-y-1.5 list-none pl-0">
+                                <li class="pb-1"><span class="font-bold text-navy-900">1. Seni Commentary:</span> Memenuhi kaidah *Stimulation* (stimulasi antusiasme), *Clarity* (kejelasan informasi), dan *Continuity* (berkesinambungan).</li>
+                                <li class="pb-1"><span class="font-bold text-navy-900">2. Teknik PVR:</span> <strong>Preview</strong> (pra-tinjau gambaran sebelum tiba), <strong>View</strong> (ulasan mendalam langsung di lokasi), dan <strong>Review</strong> (ulasan ringkas pasca-tinjau selesai).</li>
+                                <li><span class="font-bold text-navy-900">3. Saluran Telepon Bisnis:</span> Menyampaikan salam standar industri pariwisata dengan intonasi ramah, menyebut identitas diri & perusahaan, mendengarkan aktif, mencatat reservasi secara akurat, serta mengonfirmasi ulang pesanan sebelum menutup telepon.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB PANELS: NASKAH VIDEO -->
+                <div id="mat-content-script" class="material-panel hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-3 gap-2">
+                        <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-scroll text-emeraldGreen-600"></i> Naskah Video Pembelajaran</h3>
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Mari Belajar</span>
+                    </div>
+                    
+                    <!-- Full Height Frame Embed for Script Document -->
+                    <div class="w-full h-[600px] bg-slate-100 border border-slate-200 rounded-xl shadow-inner overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1P4SSD7pUGYoTiZEDrYw2vNWUuy17h6qb/preview" class="w-full h-full border-none"></iframe>
+                    </div>
+
+                    <div contenteditable="true" class="p-4 bg-yellow-50/50 border border-yellow-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 text-xs text-gray-700 leading-relaxed shadow-sm">
+                        <p>Naskah video ini merupakan rancangan dasar pembuatan media audio-visual interaktif non-formal. Memuat adegan peragaan salam pembuka profesional industri, cara mengatasi kendala miskomunikasi kultural dengan wisatawan asing, serta penerapan modul gestur ramah khas kepanduan nusantara.</p>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB PANELS: MAP MATERIAL -->
+                <div id="mat-content-map" class="material-panel hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-3 gap-2">
+                        <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-diagram-project text-emeraldGreen-600"></i> Peta Materi Video Pembelajaran</h3>
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Area Dapat Diedit</span>
+                    </div>
+                    
+                    <!-- Neat Embedded Map Wrapper -->
+                    <div class="w-full h-[500px] bg-slate-100 border border-slate-200 rounded-xl shadow-inner overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1VSZrxrqLJBYkzuroHJOJflVBxYP1EoSt/preview" class="w-full h-full border-none"></iframe>
+                    </div>
+
+                    <div contenteditable="true" class="p-4 bg-yellow-50/50 border border-yellow-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 text-xs text-gray-700 leading-relaxed shadow-sm">
+                        <p class="font-bold text-navy-900 mb-1"><i class="fa-solid fa-circle-info text-emeraldGreen-600"></i> Penjelasan Alur Peta Kognitif:</p>
+                        <p>Peta kognitif memetakan penyerapan silabus non-formal Level III KKNI. Dimulai dari pemahaman urgensi menyambut turis, mendalami nilai REACH, klasifikasi pesan kinesik/proksemik tubuh, hingga aplikasi formula PVR operasional di lapangan pariwisata Indonesia.</p>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB PANELS: LEARNING VIDEO -->
+                <div id="mat-content-video" class="material-panel hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-3 gap-2">
+                        <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-film text-emeraldGreen-600"></i> Pemutar Video Interaktif Pembelajaran</h3>
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Area Dapat Diedit</span>
+                    </div>
+
+                    <!-- Clean Video Embed Display -->
+                    <div class="w-full aspect-video bg-navy-950 rounded-xl shadow-lg overflow-hidden border border-navy-800">
+                        <iframe src="https://drive.google.com/file/d/1VfwHx0XLkitN-dVzzhxl3Cp8u9CEZLWC/preview" class="w-full h-full border-none" allowfullscreen></iframe>
+                    </div>
+
+                    <div contenteditable="true" class="p-4 bg-yellow-50/50 border border-yellow-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 text-xs text-gray-700 leading-relaxed shadow-sm">
+                        <p class="font-bold text-navy-900 mb-1"><i class="fa-solid fa-circle-info text-emeraldGreen-600"></i> Deskripsi Tayangan Stimulus</p>
+                        <p>Video ini diproyeksikan sebagai media stimulus guna memberikan visualisasi konkrit kepada peserta kursus mengenai pemahaman mendalam landasan komunikasi dengan wisatawan, jenis jenis, fungsi, dan juga teknik komunikasi dengan wisatawan</p>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB PANELS: INFOGRAPHICS -->
+                <div id="mat-content-infographic" class="material-panel hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-3 gap-2">
+                        <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-file-image text-emeraldGreen-600"></i> Kanvas Infografis Ringkasan Kompetensi</h3>
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Area Dapat Diedit</span>
+                    </div>
+                    
+                    <!-- Clean Embed Frame For Infographics -->
+                    <div class="w-full h-[550px] bg-slate-100 border border-slate-200 rounded-xl shadow-inner overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1VSZrxrqLJBYkzuroHJOJflVBxYP1EoSt/preview" class="w-full h-full border-none"></iframe>
+                    </div>
+                </div>
+
+                <!-- SUB-TAB PANELS: POWERPOINT SLIDES -->
+                <div id="mat-content-pptx" class="material-panel hidden space-y-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center border-b pb-3 gap-2">
+                        <h3 class="text-lg font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-display text-emeraldGreen-600"></i> Bahan Tayang Presentasi (PowerPoint)</h3>
+                        <span class="text-xs text-amber-600 bg-amber-50 px-2.5 py-1 rounded-md border border-amber-200 font-mono"><i class="fa-solid fa-pen-to-square"></i> Mari Belajar</span>
+                    </div>
+
+                    <!-- Clean Embed Frame For PPT -->
+                    <div class="w-full aspect-video bg-navy-950 border border-navy-800 rounded-xl shadow-inner overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1f_gzCt5JjBYrIcuCjemBLAwL6mke6rhv/preview" class="w-full h-full border-none"></iframe>
+                    </div>
+
+                    <div contenteditable="true" class="p-4 bg-yellow-50/50 border border-yellow-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 text-xs text-gray-700 leading-relaxed shadow-sm">
+                        <p>Slide Powerpoint ini disusun ringkas sebagai pendamping penyampaian materi teori. Memuat poin-poin inti landasan komunikasi REACH, klasifikasi pesan verbal & non-verbal, empat fungsi komunikasi kepemanduan, serta teknik Commentary dan PVR (Preview, View, Review). Powerpoint ini disarankan sebagai materi peserta didik dalam memahami materi modul secara lengkap.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl text-center space-y-1">
+                            <i class="fa-solid fa-list-ol text-emeraldGreen-600"></i>
+                            <p class="text-[10px] font-bold text-navy-900">Jumlah Slide</p>
+                            <p class="text-[10px] text-gray-500">7 Slide</p>
+                        </div>
+                        <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl text-center space-y-1">
+                            <i class="fa-solid fa-bullseye text-emeraldGreen-600"></i>
+                            <p class="text-[10px] font-bold text-navy-900">Cakupan</p>
+                            <p class="text-[10px] text-gray-500">REACH, Verbal/Non-Verbal, Fungsi & Teknik PVR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT: ASSESSMENT -->
+        <section id="section-assessment" class="tab-content hidden space-y-6 animate-fade-in">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 space-y-6 relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-28 h-28 opacity-10 pointer-events-none rounded-bl-3xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ca6?auto=format&fit=crop&w=300&q=80" alt="Bali Temple Corner" class="object-cover w-full h-full">
+                </div>
+
+                <div class="border-b border-gray-100 pb-3">
+                    <h3 class="text-xl font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-laptop-code text-emeraldGreen-600"></i> Uji Kompetensi Mandiri Jenjang Level III</h3>
+                    <p class="text-xs text-gray-500">Ujilah penguasaan materi komunikasi kepemanduan Anda. 15 soal pilihan ganda disesuaikan dengan kurikulum non-formal &mdash; dinilai otomatis lengkap dengan kunci jawaban dan pembahasan.</p>
+                </div>
+
+                <form id="quizForm" onsubmit="calculateQuizScore(event)" class="space-y-6">
+                    <div id="quiz-questions-container" class="space-y-6">
+                        <!-- Questions injected dynamically by javascript -->
+                    </div>
+
+                    <div class="flex flex-wrap gap-3 pt-4 border-t border-gray-100">
+                        <button type="submit" class="bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition shadow-md border border-navy-700">
+                            <i class="fa-solid fa-paper-plane mr-1 text-teal-400"></i> Submit Jawaban Ujian
+                        </button>
+                        <button type="button" onclick="resetQuizEngine()" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition border border-slate-200">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Reset Kuesioner
+                        </button>
+                    </div>
+                </form>
+
+                <div id="quiz-score-badge" class="hidden p-6 rounded-2xl border transition-all animate-fade-in">
+                    <div class="flex items-center space-x-4">
+                        <div id="score-icon-box" class="p-3.5 rounded-xl text-white text-2xl shadow-md"></div>
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-gray-400 block">Kalkulasi Hasil Evaluasi</span>
+                            <h4 id="score-text-title" class="font-black text-lg sm:text-xl text-gray-900"></h4>
+                            <p id="score-p-desc" class="text-xs text-gray-600 mt-0.5 max-w-xl leading-relaxed"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pembahasan Jawaban Container -->
+                <div id="quiz-review-container" class="hidden space-y-3 animate-fade-in">
+                    <h4 class="font-extrabold text-navy-900 text-sm sm:text-base flex items-center gap-2 border-t border-gray-100 pt-5">
+                        <i class="fa-solid fa-list-check text-emeraldGreen-600"></i> Pembahasan & Kunci Jawaban
+                    </h4>
+                    <div id="quiz-review-list" class="space-y-3"></div>
+                </div>
+            </div>
+
+            <!-- Learning Evaluation QR Code Embed Section -->
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+                <div class="md:col-span-2 space-y-2">
+                    <span class="text-[10px] font-bold text-emeraldGreen-600 uppercase tracking-wider block">
+                        <i class="fa-solid fa-qrcode mr-1"></i> Evaluasi Pembelajaran Eksternal
+                    </span>
+                    <h4 class="font-bold text-navy-900 text-base sm:text-lg">Pindai Kode QR Evaluasi & Recall Pembelajaran</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed">
+                        Selain mengerjakan uji kompetensi mandiri di atas, peserta didik juga dapat memindai kode QR berikut untuk mengakses kuis tambahan dan recall pembelajaran pada platform eksternal (sesuai modul cetak).
+                    </p>
+                    <ul class="text-[11px] text-gray-500 space-y-1 pt-1">
+                        <li><i class="fa-solid fa-link text-emeraldGreen-600 mr-1"></i> Quiz: <span class="font-mono text-navy-800">bit.ly/KomunikasiDenganWisatawan</span></li>
+                        <li><i class="fa-solid fa-link text-emeraldGreen-600 mr-1"></i> Recall: <span class="font-mono text-navy-800">bit.ly/RecallKepemanduanWisatawan</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Fixed QR Frame Embed Grid View -->
+                <div class="w-full h-64 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-inner">
+                    <iframe src="https://drive.google.com/file/d/15LihRA4_mSP5E9XUoQi4IS8YOBEF0RkG/preview" class="w-full h-full border-none"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT: DEVELOPER PROFILE -->
+        <section id="section-profile" class="tab-content hidden space-y-6 animate-fade-in">
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 max-w-3xl mx-auto relative overflow-hidden">
+                <div class="absolute right-0 bottom-0 w-36 h-36 opacity-10 pointer-events-none rounded-tl-full overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=300&q=80" alt="Lombok Beach Accent" class="object-cover w-full h-full">
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 border-b border-slate-100 pb-6">
+                    <!-- DEVELOPER PHOTO ATTACHMENT SLOT -->
+                    <div class="w-28 h-28 bg-slate-100 rounded-2xl flex items-center justify-center border border-slate-200 shadow-md relative group flex-shrink-0 overflow-hidden">
+                        <iframe src="https://drive.google.com/file/d/1TBGUp6iwpR7jYVDbI1nkRTcFol1bYMyD/preview" class="w-full h-full border-none"></iframe>
+                    </div>
+                    
+                    <div class="text-center sm:text-left space-y-1.5 flex-1">
+                        <span class="bg-emeraldGreen-50 text-emeraldGreen-800 text-[10px] font-extrabold uppercase px-2.5 py-1 rounded border border-emeraldGreen-200 inline-block">Penyusun Utama Berkas</span>
+                        <h3 class="text-xl sm:text-2xl font-black text-navy-900">Rika Sulistyawati</h3>
+                        <p class="text-xs font-semibold text-slate-500"><i class="fa-solid fa-university mr-1 text-emeraldGreen-600"></i> Program Pendidikan Non-Formal (PNF) - Universitas Negeri Semarang</p>
+                        <p class="text-xs text-gray-400 font-mono">Kode Modul: Level III KKNI / Kepemanduan-PNF-2026</p>
+
+                        <div class="flex flex-wrap justify-center sm:justify-start gap-2 pt-1.5">
+                            <a href="https://instagram.com/antarikka" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white bg-gradient-to-tr from-pink-500 via-fuchsia-600 to-amber-400 px-3 py-1.5 rounded-lg shadow-sm hover:opacity-90 transition">
+                                <i class="fa-brands fa-instagram"></i> @antarikka
+                            </a>
+                            <a href="mailto:rikasulistyawati1006@students.unnes.ac.id" class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-navy-900 bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-lg shadow-sm hover:bg-slate-200 transition">
+                                <i class="fa-solid fa-envelope text-emeraldGreen-600"></i> rikasulistyawati1006@students.unnes.ac.id
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 space-y-4 text-xs text-gray-600 leading-relaxed text-justify">
+                    <h4 class="font-extrabold text-navy-900 text-sm"><i class="fa-solid fa-bullhorn text-emeraldGreen-600 mr-1"></i> Pernyataan Pengembang Kurikulum:</h4>
+                    <p>
+                        Media digital interaktif ini dikembangkan secara inklusif guna mendukung ketersediaan bahan ajar mandiri berkualitas bagi lembaga pelatihan kerja (LPK) pariwisata swasta maupun program belajar masyarakat non-formal di Indonesia. Sinkronisasi antara modul cetak dengan instrumen visualisasi digital diharapkan mampu akselerasi pemahaman standar pelayanan wisata nasional secara komprehensif.
+                    </p>
+                </div>
+
+                <!-- STUDENT LEARNING COMPETENCY ACHIEVEMENTS -->
+                <div class="pt-6 mt-6 border-t border-slate-100 space-y-4">
+                    <h4 class="font-extrabold text-navy-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-emeraldGreen-600"></i> Capaian Kompetensi Belajar Peserta Didik
+                    </h4>
+                    <p class="text-xs text-gray-500 leading-relaxed text-justify">
+                        Berikut tiga Kompetensi Dasar (KD) yang menjadi acuan capaian belajar peserta didik setelah menyelesaikan modul Komunikasi dengan Pelanggan/Wisatawan, Level III KKNI.
+                    </p>
+
+                    <div class="space-y-3">
+                        <div class="flex gap-3 p-4 bg-slate-50 border border-slate-100 rounded-2xl shadow-inner">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-navy-900 text-white font-black text-xs flex items-center justify-center">KD1</span>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                Menerapkan landasan dan prinsip dasar komunikasi efektif <strong>(REACH)</strong> serta membangun kredibilitas diri pada saat kunjungan wisata kepada kolega, wisatawan, dan pihak-pihak lainnya.
+                            </p>
+                        </div>
+                        <div class="flex gap-3 p-4 bg-slate-50 border border-slate-100 rounded-2xl shadow-inner">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-navy-900 text-white font-black text-xs flex items-center justify-center">KD2</span>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                Mengidentifikasi, mengelola, dan mendemonstrasikan variasi komunikasi verbal serta non-verbal <strong>(kinesik, proksemik, artifaktual, paralinguistik)</strong> secara profesional.
+                            </p>
+                        </div>
+                        <div class="flex gap-3 p-4 bg-slate-50 border border-slate-100 rounded-2xl shadow-inner">
+                            <span class="flex-shrink-0 w-9 h-9 rounded-xl bg-navy-900 text-white font-black text-xs flex items-center justify-center">KD3</span>
+                            <p class="text-xs text-gray-700 leading-relaxed">
+                                Mengimplementasikan fungsi, teknik commentary terstruktur <strong>(Preview, View, Review)</strong>, serta strategi akomodasi komunikasi dan manajemen konflik lapangan.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emeraldGreen-50/50 border-l-4 border-emeraldGreen-600 p-4 rounded-r-xl space-y-1.5">
+                        <h5 class="font-bold text-navy-900 text-xs uppercase tracking-wide flex items-center gap-1.5 text-emeraldGreen-800">
+                            <i class="fa-solid fa-list-check text-emeraldGreen-600"></i> Indikator Kemampuan yang Dikuasai Peserta Didik
+                        </h5>
+                        <ul class="text-[11px] text-gray-600 space-y-1 list-disc pl-4">
+                            <li>Menguasai kemampuan berkomunikasi di tempat kerja dan pada saat kunjungan wisata kepada kolega, wisatawan, dan pihak-pihak lainnya.</li>
+                            <li>Menguasai kemampuan berkomunikasi lewat saluran telepon dan saluran komunikasi lainnya.</li>
+                            <li>Menguasai kemampuan memberikan informasi secara ringkas, padat, dan jelas.</li>
+                            <li>Menjalin hubungan dan membangun jaringan profesional dengan kolega serta mitra industri pariwisata.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB CONTENT: HELP & DISCUSSION FORUM -->
+        <section id="section-help" class="tab-content hidden space-y-6 animate-fade-in">
+            
+            <!-- SUBJECT TITLE BANNER -->
+            <div class="bg-gradient-to-r from-navy-900 to-navy-800 text-white p-4 sm:p-5 rounded-2xl shadow-md border-l-4 border-emeraldGreen-500 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 max-w-2xl mx-auto">
+                <div>
+                    <span class="text-[10px] bg-emeraldGreen-700 px-2.5 py-0.5 rounded-md font-bold uppercase tracking-widest text-teal-300">Forum Interaktif Kursus</span>
+                    <h2 class="text-base sm:text-lg font-bold tracking-wide mt-1 text-white">Mata Pelajaran: Komunikasi Kepemanduan Wisata (PNF Level III)</h2>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-md border border-gray-100 max-w-2xl mx-auto">
+                <div class="border-b border-slate-100 pb-3 mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-navy-900 flex items-center gap-2"><i class="fa-solid fa-circle-question text-emeraldGreen-600"></i> Forum Diskusi & Pusat Bantuan Peserta</h3>
+                    <p class="text-xs text-gray-500">Kirimkan pertanyaan akademis atau tanggapan Anda seputar materi kurikulum non-formal langsung ke tim pengajar.</p>
+                </div>
+
+                <form onsubmit="handleContactSubmission(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-navy-900 block">Nama Lengkap Siswa</label>
+                            <input type="text" required placeholder="Masukkan nama sesuai kartu identitas" class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 bg-slate-50">
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-navy-900 block">Alamat Surat Elektronik (Email)</label>
+                            <input type="email" required placeholder="Contoh: siswa@pembelajar.id" class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 bg-slate-50">
+                        </div>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-navy-900 block">Topik Bahasan Modul / Sub-Indikator</label>
+                        <select class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 bg-slate-50 font-medium">
+                            <option>Asas Etik REACH & Implementasi Sikap Humble</option>
+                            <option>Perbedaan Pesan Kinesik, Proksemik & Paralinguistik</option>
+                            <option>Fungsi Menjembatani (Bridging) Lintas Kultural Wisatawan</option>
+                            <option>Penerapan Rumus Teknik PVR (Preview, View, Review)</option>
+                            <option>Standar Tata Krama Komunikasi Saluran Telepon Bisnis</option>
+                        </select>
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs font-bold text-navy-900 block">Deskripsi Pertanyaan / Subjek Diskusi</label>
+                        <textarea rows="4" required placeholder="Tuliskan kendala pemahaman materi modul atau saran penambahan visualisasi penampung media di sini..." class="w-full text-xs p-3 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-emeraldGreen-600 bg-slate-50"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emeraldGreen-600 hover:bg-emeraldGreen-700 text-white font-bold text-xs sm:text-sm py-3.5 rounded-xl transition shadow-md shadow-emeraldGreen-600/10">
+                        <i class="fa-solid fa-paper-plane mr-1 text-teal-200"></i> Kirim ke Antrean Konsultasi Pelatih
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Area -->
+    <footer class="bg-navy-900 text-gray-400 text-xs mt-auto border-t border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 border-b border-navy-800 relative">
+            
+            <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full opacity-5 pointer-events-none overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1200&q=80" alt="Raja Ampat Footer" class="object-cover w-full h-full">
+            </div>
+
+            <div class="space-y-3 relative z-10">
+                <div class="flex items-center space-x-2">
+                    <span class="bg-emeraldGreen-600 text-white font-black px-2 py-1 rounded text-xs">P N F</span>
+                    <span class="text-white font-black text-sm tracking-widest">INDOGUIDE PNF</span>
+                </div>
+                <p class="text-[11px] text-gray-400 leading-relaxed text-justify">
+                    Situs media pembelajaran berbasis web terintegrasi kurikulum non-formal Level III KKNI guna melatih kecakapan komunikasi kepemanduan pariwisata Indonesia profesional.
+                </p>
+            </div>
+
+            <div class="space-y-2.5 relative z-10">
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider border-l-2 border-emeraldGreen-500 pl-2">Keunggulan PNF</h4>
+                <ul class="space-y-1.5 text-[11px]">
+                    <li><i class="fa-solid fa-angles-right text-emeraldGreen-500 mr-1"></i> Sesuai SKL Pendidikan Kursus & Pelatihan</li>
+                    <li><i class="fa-solid fa-angles-right text-emeraldGreen-500 mr-1"></i> Akses Pembelajaran Mandiri Fleksibel</li>
+                    <li><i class="fa-solid fa-angles-right text-emeraldGreen-500 mr-1"></i> Latihan Soal Evaluasi Instan Berbasis KKM</li>
+                    <li><i class="fa-solid fa-angles-right text-emeraldGreen-500 mr-1"></i> Standar Operasional Pramuwisata HPI</li>
+                </ul>
+            </div>
+
+            <div class="space-y-2.5 relative z-10">
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider border-l-2 border-emeraldGreen-500 pl-2">Identitas Kontributor</h4>
+                <div class="text-[11px] space-y-1 bg-navy-950 p-3 rounded-xl border border-navy-800">
+                    <p class="text-white font-extrabold"><i class="fa-solid fa-user-circle mr-1 text-emeraldGreen-400"></i> Rika Sulistyawati</p>
+                    <p class="text-gray-400">Penyusun & Penulis Modul Utama</p>
+                    <p class="text-gray-500 text-[10px]">Pendidikan Non Formal (PNF)</p>
+                    <p class="text-emeraldGreen-400 text-[10px] font-semibold"><i class="fa-solid fa-graduation-cap mr-1"></i> Universitas Negeri Semarang</p>
+                </div>
+            </div>
+
+            <div class="space-y-2.5 relative z-10">
+                <h4 class="text-white font-bold text-xs uppercase tracking-wider border-l-2 border-emeraldGreen-500 pl-2">Hubungi Kami</h4>
+                <ul class="space-y-2 text-[11px]">
+                    <li>
+                        <a href="https://instagram.com/antarikka" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-emeraldGreen-400 transition-colors group">
+                            <span class="w-7 h-7 rounded-lg bg-navy-950 border border-navy-800 flex items-center justify-center text-emeraldGreen-400 group-hover:bg-emeraldGreen-600 group-hover:text-white transition-colors flex-shrink-0">
+                                <i class="fa-brands fa-instagram"></i>
+                            </span>
+                            <span>@antarikka</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:rikasulistyawati1006@students.unnes.ac.id" class="flex items-center gap-2 hover:text-emeraldGreen-400 transition-colors group">
+                            <span class="w-7 h-7 rounded-lg bg-navy-950 border border-navy-800 flex items-center justify-center text-emeraldGreen-400 group-hover:bg-emeraldGreen-600 group-hover:text-white transition-colors flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </span>
+                            <span class="break-all">rikasulistyawati1006@students.unnes.ac.id</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-gray-500 relative z-10">
+            <p>&copy; 2026 INDOGUIDE PNF - Hak Cipta Dilindungi Undang-Undang. Dikembangkan bersama Program Studi PNF UNNES.</p>
+            <div class="flex space-x-2">
+                <span class="bg-navy-950 border border-navy-800 px-2 py-0.5 rounded text-[10px] font-mono">TailwindCSS v3</span>
+                <span class="bg-navy-950 border border-navy-800 px-2 py-0.5 rounded text-[10px] font-mono">HTML5 SEMANTIC</span>
+                <span class="bg-navy-950 border border-navy-800 px-2 py-0.5 rounded text-[10px] font-mono text-emeraldGreen-400">KKNI Jenjang III</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Data Store Array: Core Module Quiz Questions Array
+        const moduleQuizDatabase = [
+            {
+                id: 1,
+                question: "Asas etis dalam hukum komunikasi REACH yang mewajibkan seorang pemandu wisata menghargai hak, adat istiadat, dan martabat luhur setiap wisatawan disebut...",
+                options: ["Respect", "Empathy", "Audible", "Clarity"],
+                correct: 0,
+                explain: "Sesuai isi modul, 'Respect' didefinisikan sebagai sikap tulus menghormati harkat dan martabat setiap wisatawan tanpa memandang suku, ras, gender, status sosial, maupun agama."
+            },
+            {
+                id: 2,
+                question: "Kemampuan pemandu untuk membaca dinamika rombongan (kapan tamu merasa lelah, lapar, atau jenuh) dan menyesuaikan ritme tur merupakan penerapan unsur REACH yaitu...",
+                options: ["Respect", "Empathy", "Humble", "Clarity"],
+                correct: 1,
+                explain: "Modul menjelaskan 'Empathy' sebagai kemampuan menempatkan diri pada situasi psikologis/fisik wisatawan dan menyesuaikan ritme tur sesuai kondisi rombongan."
+            },
+            {
+                id: 3,
+                question: "Penggunaan alat bantu pengeras suara (megaphone/wireless guide system) saat memandu rombongan besar di area terbuka yang bising bertujuan memenuhi unsur REACH yaitu...",
+                options: ["Audible", "Clarity", "Humble", "Empathy"],
+                correct: 0,
+                explain: "'Audible' menekankan bahwa pesan lisan wajib tersampaikan secara jelas secara fisik, termasuk penggunaan alat bantu pengeras suara saat dibutuhkan."
+            },
+            {
+                id: 4,
+                question: "Sikap pemandu yang menjauhi penggunaan jargon teknis yang tidak dipahami awam serta menyusun diksi secara lugas dan runtun, merupakan penerapan unsur...",
+                options: ["Audible", "Humble", "Clarity", "Respect"],
+                correct: 2,
+                explain: "'Clarity' adalah kejelasan informasi agar tidak menimbulkan salah tafsir, dengan diksi yang lugas, runtun, dan bebas jargon teknis."
+            },
+            {
+                id: 5,
+                question: "Sikap terbuka, tidak merasa paling tahu, ramah, dan bebas dari kesan arogan saat merespons pertanyaan kritis wisatawan disebut...",
+                options: ["Humble", "Clarity", "Audible", "Empathy"],
+                correct: 0,
+                explain: "'Humble' (rendah hati) adalah sikap terbuka dan tidak menggurui saat merespons pertanyaan kritis dari wisatawan."
+            },
+            {
+                id: 6,
+                question: "Sebagai aturan etis mutlak dalam menerapkan Empathy, topik apa yang harus dihindari pemandu agar tidak memicu polarisasi emosional rombongan?",
+                options: ["Topik kuliner lokal", "Topik sejarah destinasi", "Topik sensitif SARA", "Topik cuaca harian"],
+                correct: 2,
+                explain: "Modul menegaskan bahwa pemandu harus menghindari pembahasan topik sensitif SARA agar tidak memicu polarisasi emosional rombongan."
+            },
+            {
+                id: 7,
+                question: "Jika seorang pemandu wisata mengatur jarak berdiri atau ruang interpersonal yang ideal saat berbicara dengan turis asing, maka ia sedang mempraktikkan kategori pesan...",
+                options: ["Pesan Kinesik", "Pesan Artifaktual", "Pesan Proksemik", "Pesan Paralinguistik"],
+                correct: 2,
+                explain: "Modul menetapkan bahwa 'Pesan Proksemik' berkaitan dengan pengaturan jarak fisik antarmanusia; wisatawan Barat (Low-Context) umumnya menghendaki jarak 1-2 meter."
+            },
+            {
+                id: 8,
+                question: "Penggunaan seragam resmi yang rapi dan kartu tanda pengenal (ID Card) HPI yang sah oleh pemandu termasuk dalam kategori pesan non-verbal...",
+                options: ["Pesan Kinesik", "Pesan Proksemik", "Pesan Artifaktual", "Pesan Paralinguistik"],
+                correct: 2,
+                explain: "'Pesan Artifaktual' meliputi penggunaan busana kerja profesional dan ID Card resmi sebagai simbol legalitas yang membedakan dari pemandu ilegal (wild guide)."
+            },
+            {
+                id: 9,
+                question: "Kontrol tinggi-rendah intonasi, pengaturan tempo bicara, serta kepekaan terhadap warna nada suara saat menghadapi situasi psikologis tamu disebut pesan...",
+                options: ["Pesan Kinesik", "Pesan Proksemik", "Pesan Artifaktual", "Pesan Paralinguistik"],
+                correct: 3,
+                explain: "'Pesan Paralinguistik' adalah aspek vokal di luar kata-kata, meliputi intonasi, tempo bicara, dan warna nada suara."
+            },
+            {
+                id: 10,
+                question: "Berdasarkan riset sosiologi komunikasi pariwisata yang dikutip dalam modul, berapa persen makna pesan dalam interaksi tatap muka dihantarkan oleh bahasa tubuh (komunikasi non-verbal)?",
+                options: ["25%", "45%", "55%", "75%"],
+                correct: 2,
+                explain: "Modul menyebutkan bahwa riset sosiologi komunikasi pariwisata membuktikan 55% makna pesan dalam interaksi tatap muka dihantarkan secara kuat oleh bahasa tubuh."
+            },
+            {
+                id: 11,
+                question: "Mengenalkan norma sosial, aturan adat, tabu, dan hukum setempat agar wisatawan mematuhi regulasi di objek wisata (misalnya pemakaian kain adat di tempat suci) merupakan implementasi dari...",
+                options: ["Fungsi Informasi", "Fungsi Sosialisasi Nilai", "Fungsi Menjembatani (Bridging)", "Fungsi Hiburan"],
+                correct: 1,
+                explain: "'Fungsi Sosialisasi Nilai' bertugas mengenalkan dan meyakinkan wisatawan mematuhi norma, aturan adat, serta tabu setempat demi kelestarian destinasi."
+            },
+            {
+                id: 12,
+                question: "Bertindak sebagai jembatan lintas kultural (mediator) yang menghubungkan kepentingan wisatawan dengan masyarakat lokal, penyedia jasa, dan kebijakan pemerintah setempat merupakan implementasi dari...",
+                options: ["Fungsi Informasi", "Fungsi Sosialisasi Nilai", "Fungsi Menjembatani (Bridging)", "Fungsi Hiburan"],
+                correct: 2,
+                explain: "Fungsi Menjembatani atau 'Bridging' berperan sebagai mediator netral yang menghubungkan kepentingan wisatawan dengan masyarakat lokal dan pemangku kepentingan lain."
+            },
+            {
+                id: 13,
+                question: "Teknik mendongeng (storytelling) dan selingan humor sehat yang sopan oleh pemandu untuk mengusir kejenuhan perjalanan termasuk dalam...",
+                options: ["Fungsi Informasi", "Fungsi Sosialisasi Nilai", "Fungsi Menjembatani (Bridging)", "Fungsi Hiburan"],
+                correct: 3,
+                explain: "'Fungsi Hiburan' menciptakan atmosfer perjalanan yang riang dan rekreatif melalui storytelling, humor sehat, atau ice breaking."
+            },
+            {
+                id: 14,
+                question: "Dalam Seni Commentary, indikator yang menuntut struktur cerita mengalir runtut dengan transisi halus antar-topik dan tidak melompat-lompat disebut...",
+                options: ["Stimulation", "Clarity", "Continuity", "Empathy"],
+                correct: 2,
+                explain: "'Continuity (Berkesinambungan)' menuntut struktur cerita mengalir runtut, memiliki jembatan kalimat (transisi) yang halus antar-topik."
+            },
+            {
+                id: 15,
+                question: "Formula teknik memandu 'PVR' yang mengharuskan pemandu memberikan gambaran umum objek wisata sesaat SEBELUM rombongan tiba di lokasi (biasanya dilakukan di dalam bus) disebut...",
+                options: ["Preview", "View", "Review", "Post-view"],
+                correct: 0,
+                explain: "Teknik 'Preview' berarti memberikan pra-tinjau gambaran umum informasi (ringkasan sejarah, rute, fasilitas, aturan keselamatan) sebelum rombongan tiba di lokasi objek."
+            }
+        ];
+
+        // Handler function to render dynamic elements for the Quiz Engine
+        function renderPracticeQuizEngine() {
+            const container = document.getElementById('quiz-questions-container');
+            if(!container) return;
+            
+            container.innerHTML = moduleQuizDatabase.map((item, idx) => `
+                <div class="p-5 bg-slate-50 border border-slate-200 rounded-2xl space-y-3 shadow-inner">
+                    <p class="font-bold text-navy-900 text-sm leading-relaxed">
+                        <span class="bg-navy-900 text-white px-2 py-0.5 rounded text-xs mr-1">Soal ${idx + 1}</span> 
+                        ${item.question}
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1.5">
+                        ${item.options.map((opt, optIdx) => `
+                            <label class="flex items-start space-x-2.5 p-3 bg-white border border-slate-200 rounded-xl cursor-pointer hover:bg-emeraldGreen-50/50 hover:border-emeraldGreen-600 transition-colors text-xs font-medium text-gray-700 shadow-sm">
+                                <input type="radio" required name="question-${item.id}" value="${optIdx}" class="mt-0.5 text-emeraldGreen-600 focus:ring-emeraldGreen-600">
+                                <span>${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Quiz Submission calculation scoring handler method
+        function calculateQuizScore(event) {
+            event.preventDefault();
+            const form = event.target;
+            let totalCorrectAnswers = 0;
+            const totalQuestionsCount = moduleQuizDatabase.length;
+
+            moduleQuizDatabase.forEach(item => {
+                const userSelection = form.querySelector(`input[name="question-${item.id}"]:checked`);
+                if(userSelection && parseInt(userSelection.value) === item.correct) {
+                    totalCorrectAnswers++;
+                }
+            });
+
+            const finalCalculatedScore = Math.round((totalCorrectAnswers / totalQuestionsCount) * 100);
+            const KKM_PASS_THRESHOLD = 75;
+            
+            const badgeBox = document.getElementById('quiz-score-badge');
+            const iconBox = document.getElementById('score-icon-box');
+            const textTitle = document.getElementById('score-text-title');
+            const descParagraph = document.getElementById('score-p-desc');
+
+            badgeBox.classList.remove('hidden');
+
+            if(finalCalculatedScore >= KKM_PASS_THRESHOLD) {
+                badgeBox.className = "p-6 rounded-2xl border bg-emerald-50 border-emerald-200 text-emerald-900 shadow-sm animate-fade-in";
+                iconBox.className = "p-3.5 rounded-xl text-white text-2xl shadow-md bg-emerald-600";
+                iconBox.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                textTitle.innerText = `Skor Anda: ${finalCalculatedScore} / 100 (STATUS: TUNTAS) — Benar ${totalCorrectAnswers} dari ${totalQuestionsCount} soal`;
+                descParagraph.innerText = "Selamat! Anda dinyatakan Berhasil Menguasai Kompetensi dalam modul komunikasi ini dengan sangat baik. Silakan lanjutkan pembelajaran ke tingkat kompetensi non-formal berikutnya.";
+            } else {
+                badgeBox.className = "p-6 rounded-2xl border bg-rose-50 border-rose-200 text-rose-900 shadow-sm animate-fade-in";
+                iconBox.className = "p-3.5 rounded-xl text-white text-2xl shadow-md bg-rose-600";
+                iconBox.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i>';
+                textTitle.innerText = `Skor Anda: ${finalCalculatedScore} / 100 (STATUS: BELUM TUNTAS) — Benar ${totalCorrectAnswers} dari ${totalQuestionsCount} soal`;
+                descParagraph.innerText = "Nilai Anda belum mencapai KKM ambang batas minimal kelulusan (75). Pelajari kembali bagian-bagian modul yang belum Anda kuasai, atau diskusikan dengan tutor pelatih Anda lewat Pusat Bantuan.";
+            }
+
+            renderQuizReview(form);
+
+            window.scrollTo({ top: badgeBox.offsetTop - 120, behavior: 'smooth' });
+        }
+
+        // Builds the per-question review list
+        function renderQuizReview(form) {
+            const reviewContainer = document.getElementById('quiz-review-container');
+            const reviewList = document.getElementById('quiz-review-list');
+            if(!reviewContainer || !reviewList) return;
+
+            reviewList.innerHTML = moduleQuizDatabase.map((item, idx) => {
+                const userSelection = form.querySelector(`input[name="question-${item.id}"]:checked`);
+                const userValue = userSelection ? parseInt(userSelection.value) : null;
+                const isCorrect = userValue === item.correct;
+                const isUnanswered = userValue === null;
+
+                const statusClasses = isUnanswered
+                    ? "bg-slate-50 border-slate-200"
+                    : (isCorrect ? "bg-emerald-50 border-emerald-200" : "bg-rose-50 border-rose-200");
+
+                const statusBadge = isUnanswered
+                    ? `<span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-slate-200 text-slate-600"><i class="fa-solid fa-circle-minus"></i> Tidak Dijawab</span>`
+                    : (isCorrect
+                        ? `<span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-emerald-600 text-white"><i class="fa-solid fa-check"></i> Benar</span>`
+                        : `<span class="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wide px-2 py-0.5 rounded-full bg-rose-600 text-white"><i class="fa-solid fa-xmark"></i> Salah</span>`);
+
+                const userAnswerText = isUnanswered ? "(Tidak dijawab)" : item.options[userValue];
+
+                return `
+                <div class="p-4 sm:p-5 border rounded-2xl space-y-2.5 shadow-sm ${statusClasses}">
+                    <div class="flex flex-wrap items-center justify-between gap-2">
+                        <p class="font-bold text-navy-900 text-xs sm:text-sm leading-relaxed flex-1">
+                            <span class="bg-navy-900 text-white px-2 py-0.5 rounded text-[10px] mr-1">Soal ${idx + 1}</span>
+                            ${item.question}
+                        </p>
+                        ${statusBadge}
+                    </div>
+                    <div class="text-xs space-y-1 pl-1">
+                        <p class="${isUnanswered ? 'text-slate-500' : (isCorrect ? 'text-emerald-800' : 'text-rose-800')}">
+                            <i class="fa-solid fa-pen mr-1"></i> Jawaban Anda: <span class="font-semibold">${userAnswerText}</span>
+                        </p>
+                        ${!isCorrect ? `<p class="text-emerald-800"><i class="fa-solid fa-key mr-1"></i> Kunci Jawaban: <span class="font-semibold">${item.options[item.correct]}</span></p>` : ''}
+                    </div>
+                    <div class="text-[11px] text-gray-600 bg-white/70 border border-white rounded-xl p-3 leading-relaxed">
+                        <span class="font-bold text-navy-900"><i class="fa-solid fa-circle-info text-emeraldGreen-600 mr-1"></i> Pembahasan:</span> ${item.explain}
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            reviewContainer.classList.remove('hidden');
+        }
+
+        // Reset quiz form utility engine method
+        function resetQuizEngine() {
+            document.getElementById('quizForm').reset();
+            const badgeBox = document.getElementById('quiz-score-badge');
+            badgeBox.classList.add('hidden');
+            const reviewContainer = document.getElementById('quiz-review-container');
+            if(reviewContainer) {
+                reviewContainer.classList.add('hidden');
+                document.getElementById('quiz-review-list').innerHTML = '';
+            }
+            renderPracticeQuizEngine();
+            window.scrollTo({ top: document.getElementById('section-assessment').offsetTop - 50, behavior: 'smooth' });
+        }
+
+        // Global Tab content switcher engine logic
+        function switchTab(activeTabId) {
+            document.querySelectorAll('.tab-content').forEach(block => block.classList.add('hidden'));
+            document.querySelectorAll('.tab-content').forEach(block => block.classList.remove('block'));
+            
+            document.getElementById(`section-${activeTabId}`).classList.remove('hidden');
+            document.getElementById(`section-${activeTabId}`).classList.add('block');
+
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.className = "nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-gray-300 hover:bg-navy-800 hover:text-white transition";
+            });
+
+            document.getElementById(`nav-${activeTabId}`).className = "nav-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition bg-emeraldGreen-600 text-white shadow-sm";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Materials inner sub-tabs controller method
+        function switchMaterialTab(targetMaterialId) {
+            document.querySelectorAll('.material-panel').forEach(panel => panel.classList.add('hidden'));
+            document.querySelectorAll('.material-panel').forEach(panel => panel.classList.remove('block'));
+
+            document.getElementById(`mat-content-${targetMaterialId}`).classList.remove('hidden');
+            document.getElementById(`mat-content-${targetMaterialId}`).classList.add('block');
+
+            document.querySelectorAll('.mat-tab-btn').forEach(btn => {
+                btn.className = "mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded-lg text-gray-600 hover:bg-gray-50 transition flex items-center space-x-1.5";
+            });
+
+            document.getElementById(`mat-btn-${targetMaterialId}`).className = "mat-tab-btn px-4 py-2.5 text-xs sm:text-sm font-bold rounded-lg bg-navy-900 text-white transition flex items-center space-x-1.5 shadow-sm";
+        }
+
+        // Simplified Contact Form Submission simulator
+        function handleContactSubmission(event) {
+            event.preventDefault();
+            alert("Pesan/subjek diskusi Anda telah sukses tersubmit ke dalam antrean respon pelatih Rika Sulistyawati. Tanggapan formal akan dikirimkan kembali lewat email Anda.");
+            event.target.reset();
+        }
+
+        // Window life cycle initializer hook
+        window.onload = function() {
+            renderPracticeQuizEngine();
+        };
+    </script>
+    
+    <style>
+        .animate-spin-slow {
+            animation: spin 30s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
